@@ -26,6 +26,13 @@ class NodeTestCase(TestCase):
         node2.append(Node('my_child2'))
         self.assertNotEqual(node1, node2)
 
+    def test_whitespace_is_ignored_in_text(self):
+        node1 = Node('my_tag')
+        node1.text = 'Hello\n\n'
+        node2 = Node('my_tag')
+        node2.text = 'Hello'
+        self.assertEqual(node1, node2)
+
 
 class XMLMergerTestCase(TestCase):
 

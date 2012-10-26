@@ -4,7 +4,7 @@
         <title>XML Developer's Guide</title>
         <genre>Computer</genre>
         <characters>
-            <character gender="male" name="aname"/>
+            <character name="aname" gender="male"/>
             <character name="anothername"/>
             <character name="yetanothername">
                 <split-personality>

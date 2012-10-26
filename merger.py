@@ -9,10 +9,15 @@ class Node(Element):
     def __eq__(self, other):
         return (
             self.tag == other.tag and
-            self.text == other.text and
+            self._compare_text(other) and
             self.tail == other.tail and
             self.attrib == other.attrib and
             list(self) == list(other))
+    
+    def _compare_text(self, other):
+        if self.text and other.text:
+            return self.text.strip() == other.text.strip()
+        return self.text == other.text
 
 
 class XMLMerger(object):
